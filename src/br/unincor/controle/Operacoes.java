@@ -3,6 +3,7 @@ package br.unincor.controle;
 import java.util.List;
 
 import br.unincor.model.Pokemon;
+import br.unincor.exception.EvolucaoException;
 
 public class Operacoes {
 	
@@ -13,8 +14,14 @@ public class Operacoes {
 	 * que o pokemon não estiver com no mínimo de CP
 	 * lance a 'EvolucaoException'. Se estiver com pelo
 	 * menos o mínimo de CP, setar 1 no CP deste pokemon.
+	 * @throws EvolucaoException 
 	 */
-	public boolean evoluir(Pokemon p) {
+	public boolean evoluir(Pokemon p) throws EvolucaoException{
+		if (p.getCp() > 50) {
+			 p.setCp(1L);
+		} else {
+			throw new EvolucaoException(p);
+		}
 		return true;
 	}
 	

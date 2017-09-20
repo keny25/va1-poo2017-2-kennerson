@@ -27,23 +27,51 @@ public class Usuario {
 	}
 
 	public Integer recebeInteiro(String texto) {
-		return Integer.parseInt(JOptionPane.showInputDialog(texto));
+		try {
+			return Integer.parseInt(JOptionPane.showInputDialog(texto));			
+		} catch (Exception e) {
+			exibeMsg("Entrada inválida!");
+		}
+		return null;
 	}
 
 	public Long recebeLong(String texto) {
-		return Long.parseLong(JOptionPane.showInputDialog(texto));
+			try {
+				return Long.parseLong(JOptionPane.showInputDialog(texto));
+			} catch (Exception e) {
+				exibeMsg("Entrada inválida!");
+			}
+			return null;
 	}
 
 	public Double recebeDouble(String texto) {
-		return Double.parseDouble(JOptionPane.showInputDialog(texto));
+		try {
+			return Double.parseDouble(JOptionPane.showInputDialog(texto));
+		} catch (Exception e) {
+			exibeMsg("Entrada inválida!");
+		}
+		return null;
 	}
 
 	public Float recebeFloat(String texto) {
-		return Float.parseFloat(JOptionPane.showInputDialog(texto));
+		try {
+			return Float.parseFloat(JOptionPane.showInputDialog(texto));
+		} catch (Exception e) {
+			exibeMsg("Entrada inválida!");
+		}
+		return null;
 	}
 
 	public Boolean recebeBoolean(String texto) {
-		return Boolean.parseBoolean(JOptionPane.showInputDialog(texto));
+		try {
+			int resposta = JOptionPane.showConfirmDialog(null, texto);
+			if(resposta == JOptionPane.YES_OPTION)
+				return Boolean.TRUE;
+			return Boolean.FALSE;
+		} catch (Exception e) {
+			exibeMsg("Entrada inválida!");
+		}
+		return null;
 	}
 
 	public String recebeTexto(String texto) {

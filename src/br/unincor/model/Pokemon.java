@@ -14,7 +14,7 @@ public class Pokemon {
 		this.tipo = tipo;
 		this.peso = peso;
 		this.altura = altura;
-		this.cp = cp;
+		this.cp = 10L;
 	}
 	
 	public String getNome() {
@@ -47,9 +47,13 @@ public class Pokemon {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
+	@Override
+	public String toString() {
+		return "Pokemon [nome=" + nome + ", tipo=" + tipo + ", peso=" + peso + ", altura=" + altura + ", cp=" + cp
+				+ "]";
+	}
 	
 	/** Implementar este método para retornar os dados do pokemon **/
-	public String verDados() {
-		return "";
-	}
+	
 }
